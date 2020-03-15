@@ -26,8 +26,7 @@ def dag_info(**kwargs):
 
 
 def get_previous_execution_date(other_dag_schedule, this_dag_schedule, current_execution_date, **kwargs):
-    print("current_execution_date: {}".format(current_execution_date))
-    print("current_execution_date type: {}".format(type(current_execution_date)))
+    print(f"current_execution_date: {current_execution_date}")
 
     current_execution_date = convert_pendulum_object_to_datetime(current_execution_date)
     this_dag_schedule = croniter(this_dag_schedule, current_execution_date, ret_type=datetime)
